@@ -2,10 +2,11 @@ import openai
 import tiktoken
 import os
 from dotenv import load_dotenv, find_dotenv
+import streamlit as st
 
 _ = load_dotenv(find_dotenv()) # read local .env file
 
-openai.api_key  = os.environ.get('OPENAI_API_KEY')
+openai.api_key  = os.environ.get(st.secrets.OPENAI_API_KEY)
 
 client = openai.OpenAI()
 
