@@ -112,11 +112,15 @@ def clear_input():
 # 主應用函數
 def main():
     st.title('易經占卜')
-    st.subheader('探索易經的奧秘')
+    st.subheader('探索易經的奧秘\nExploring the Mysteries of the YiChing')
     st.write("""
 歡迎來到易經占卜網站，這裡您可以通過古老的易經卦象來探索生活中的各種可能性。
 無論是關於個人發展、職業選擇，還是人際關係的問題，易經占卜都能為您提供獨特的洞察和指引。
 """)
+    st.write("""
+             Welcome to the YiChing Divination website, where you can explore the various possibilities in life through the ancient symbols of the YiChing. 
+             Whether it's about personal development, career choices, or interpersonal relationships, YiChing divination can offer you unique insights and guidance.
+             """)
     # 检查是否需要清除输入
     if st.session_state.clear_flag:
         # 清除输入并重置标志位
