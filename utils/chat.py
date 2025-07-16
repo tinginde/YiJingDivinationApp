@@ -1,14 +1,16 @@
-import openai 
-import tiktoken
+import openai
 import os
 from dotenv import load_dotenv, find_dotenv
 import streamlit as st
 
-_ = load_dotenv(find_dotenv()) # read local .env file
+# Load environment variables from a .env file if present
+load_dotenv(find_dotenv())
 
-openai.api_key  = os.environ.get(st.secrets.OPENAI_API_KEY)
+# Prefer the environment variable but fallback to Streamlit secrets
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY")
 
-client = openai.OpenAI()
+# Create OpenAI client with the resolved API key
+client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
 def get_completion(prompt, input, model="gpt-3.5-turbo-0125"):
     messages=[
@@ -22,4 +24,5 @@ def get_completion(prompt, input, model="gpt-3.5-turbo-0125"):
     )
     return response.choices[0].message.content
 
+# Example usage:
 # print(get_completion('今年工作運如何'))
