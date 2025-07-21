@@ -2,6 +2,9 @@
 
 這是一個使用 [Streamlit](https://streamlit.io/) 開發、並部署在 [Zeabur](https://zeabur.com/) 平台上的簡易應用。使用者輸入問題後，系統將根據隨機卦象，結合 AI 生成對應的卦象解釋，提供人生方向上的參考。
 
+## 🌐 線上體驗：
+👉 https://streamlit-yijing.zeabur.app/
+
 ## 主要功能
 
 - 以擲銅錢方式隨機產生六爻並組成卦象
