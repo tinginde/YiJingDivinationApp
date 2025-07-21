@@ -12,7 +12,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY")
 # Create OpenAI client with the resolved API key
 client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
-def get_completion(prompt, input, model="gpt-3.5-turbo-0125"):
+def get_completion(prompt, input, model="gpt-4o"):
     messages=[
         {
             'role': 'system',
