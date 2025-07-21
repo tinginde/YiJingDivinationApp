@@ -128,7 +128,7 @@ def main():
         st.session_state["clear_flag"] = False
         
     # value输入控件的初始值, key唯一的标识符（ID）,on_changeon_change指定当输入控件的值发生变化时，应该调用的函数
-    user_question = st.text_input('請輸入你的問題：', value=st.session_state.user_input, key='user_input', on_change=reset_clear_flag)
+    user_question = st.text_input('請輸入你的問題 Please enter your question ：', value=st.session_state.user_input, key='user_input', on_change=reset_clear_flag)
     
     # 创建一个文本输入框，并使用session_state变量来存储输入值
     col1, col2 = st.columns(2)
@@ -144,8 +144,9 @@ def main():
             interpretation = get_interpretation(hexagram_name, interpretations)
             final_interpretation = get_completion(user_question, interpretation)
             # st.session_state['query_result'] = f'您的卦象是：{hexagram_name}\n卦象解释：{final_interpretation}'
-            st.write('您的卦象是：', hexagram_name)
-            st.write('卦象解釋', final_interpretation)
+            st.write('您的卦象是 Your hexagram is：', hexagram_name)
+            st.write('卦象解釋 Interpretation')
+            st.write(final_interpretation)
 
     with col2:
         st.button('清除輸入', on_click=clear_input)    
