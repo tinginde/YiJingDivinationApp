@@ -2,6 +2,7 @@ import streamlit as st
 import random
 from data.data_loader import load_interpretations, get_interpretation
 from utils.chat import get_completion
+from utils.counter import read_count, increment_count
 
 ba_gua_numbers_reverse={
     999: '乾卦',
@@ -112,6 +113,12 @@ def clear_input():
 # 主應用函數
 def main():
     st.title('易經占卜')
+    if 'counted_visit' not in st.session_state:
+        visit_count = increment_count()
+        st.session_state.counted_visit = True
+    else:
+        visit_count = read_count()
+    st.write(f"累計訪問人數：{visit_count}")
     st.subheader('探索易經的奧秘\nExploring the Mysteries of the YiChing')
     st.write("""
 歡迎來到易經占卜網站，這裡您可以通過古老的易經卦象來探索生活中的各種可能性。
