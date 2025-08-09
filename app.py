@@ -118,7 +118,9 @@ def main():
         st.session_state.counted_visit = True
     else:
         visit_count = read_count()
+
     st.write(f"累計訪問人數：{visit_count}")
+
     st.subheader('探索易經的奧秘\nExploring the Mysteries of the YiChing')
     st.write("""
 歡迎來到易經占卜網站，這裡您可以通過古老的易經卦象來探索生活中的各種可能性。
